@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head><meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <title>CHARUSAT</title>
+</head>
+ <div class="abc" style="background-color:cyan ;"> 
+    <h1 style="color:blue" align="center">
+ Charotar University of Science and Technology <br> 
+ <h1 style="color:red" align="center"> SPOURAL EVENT</h1>
+  <body style="background-color: rgb(237, 220, 237);">
+</div>
+</h1> 
+<hr> <button style="color:rgb(2, 3, 2)"> 
+     
+        <h2>This is Charusat University biggest sports and Cultural event. Here all departments come together and compete with each other and celebrate this like biggest festival. </h2>
+        <a href="spoural.html" style="color:rgb(16, 16, 16)">
+            <h1 style="color: rgb(49, 47, 174);"> Click Here To Register Your Self For <i>SPOURAL.</i></h1></a><br>
+        </a>
+</button>
+</body>
+</html>
