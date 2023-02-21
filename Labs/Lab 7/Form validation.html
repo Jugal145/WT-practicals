@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Validation</title>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form name="myform" action="">
+        <input type="text" id="name">
+        <span id="textError"></span><br><br>
+        <input type="text" name="email" id="email">
+        <span id="emailError"></span><br><br>
+        <input type="submit" value="submit" id="submit">
+        
+    </form> 
+    <script src="lab 7.js"></script>
+
+</body>
+  
+  
+  
+  
+  
+  //JS FILE
+  console.log("Connected...")
+    document.addEventListener("submit", function(evnt){
+    let isFormValid = true;
+    let myform = document.myform;
+    let userName = myform.name.value;
+    let email = myform.email.value;
+    //let check = this.getElementById "subject"
+    if(userName.length <= 0 ){
+        isFormValid = false;
+        document.getElementById("textError").textContent = "Please Enter Valid Name";
+    }
+    if(!isFormValid){
+        evnt.preventDefault();
+    }
+    if(email.length <4){
+        isFormValid = false;
+        document.getElementById("emailError").textContent = "Please Enter Valid Email";
+    }
+});
