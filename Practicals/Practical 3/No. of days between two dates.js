@@ -4,4 +4,6 @@ function Days() {
     
     var timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+     document.getElementById("output").innerHTML = " Number of days between " + startDate.toDateString() + " and " + endDate.toDateString() + " is: " + diffDays;
 }
+
