@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Class</h2>
+    <table>
+      <tr>
+        <td>NAME</td>
+        <td id="name"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>ID NO</td>
+        <td id="id_no"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>Branch</td>
+        <td id="branch"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>SGPA sem 1</td>
+        <td id="sem1"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>SGPA sem 2</td>
+        <td id="sem2"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>SGPA sem 3</td>
+        <td id="sem3"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="submit" /></td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>NAME</td>
+        <td id="name1"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>ID NO</td>
+        <td id="id_no1"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>Branch</td>
+        <td id="branch1"><input type="text" /></td>
+      </tr>
+      <tr>
+        <td>CGPA</td>
+        <td id="cgpa"><input type="text" /></td>
+      </tr>
+    </table>
+    <input type="button" value="Details"
+onmouseover="print_data ()">
+    <script src="./lab 6.js"></script>
+  </body>
+</html>
+
+
+
+
+//JS FILE
+console.log("connected");
+let table = document.createElement("table");
+table.border = "2px";
+let Sutudent = class {
+    constructor(name,id,branch, sem1, sem2, sem3) {
+        this.name = name;
+        this.id = id;
+        this.branch = branch;
+        this.sem1 = sem1;
+        this.sem2 = sem2;
+        this.sem3 = sem3;
+    }
+    get_cgpa() {
+        let se1 = Number(this.sem1);
+        let se2 = Number(this.sem2);
+        let se3 = Number(this.sem3);
+        let d = document.getElementById("id_cgpa");
+        let cgpa = (se1 + se2 + se3) / 3;
+        let txt = ` ${this.name}'s CGPA is ${cgpa}`;
+        console.log(txt);
+        d.innerHTML = txt;
+    }
+}
+
+let thead = function (s1) {
+    let tr = document.createElement("tr");
+    table.appendChild(tr);
+    for (items in s1) {
+        let td = document.createElement("th");
+        let txt = document.createTextNode(items);
+        td.appendChild(txt);
+        tr.appendChild(td);
+    }
+    document.getElementById("id_table").appendChild(table);
+}
+let clear = function () {
+    document.getElementById("id_name").value = null;
+    document.getElementById("id_id").value = null;;
+    document.getElementById("id_branch").value = null;;
+    document.getElementById("id_sem1").value = null;;
+    document.getElementById("id_sem2").value = null;;
+    document.getElementById("id_sem3").value = null;;
+}
+let get_data = function () {
+    let name = document.getElementById("id_name").value;
+    let id = document.getElementById("id_id").value;
+    let gender = document.getElementById("id_branch").value;
+    let sem1 = document.getElementById("id_sem1").value;
+    let sem2 = document.getElementById("id_sem2").value;
+    let sem3 = document.getElementById("id_sem3").value;
+    let s1 = new Sutudent(name, id, branch, sem1, sem2, sem3);
+    console.log(s1);
+    return s1;
+}
+let print_data = function () {
+    let s1 = get_data();
+    clear();
+    let tr = document.createElement("tr");
+    table.appendChild(tr);
+    for (items in s1) {
+        let td = document.createElement("td");
+        let txt = document.createTextNode(s1[items]);
+        td.appendChild(txt);
+        tr.appendChild(td);
+    }
+    document.getElementById("id_table").appendChild(table);
+    s1.get_cgpa();
+    jsonify(s1);
+}
+
+let jsonify = function (s1) {
+    let json = JSON.stringify(s1);
+    console.log(json);
+}
+thead(new Sutudent());
+document.getElementById("id_submit").addEventListener("click", print_data);
