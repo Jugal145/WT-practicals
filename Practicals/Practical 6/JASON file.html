@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON</title>
+</head>
+<body>
+<h1>Value fatched from json <BR>converting in js object</h1>  <p id="p"></p>
+<script>
+var jugal = '{"first_name" : "Jugal", "last_name" : "Mehta", "location" :
+"Gujarat", "gender" : "Male" ,"ID" : "21it083"}'; const obj = JSON.parse(jugal);
+let t = `first-name:- ${obj.first_name} <br> last-name:-
+${obj.last_name} <br> location: ${obj.location} <br> gender: ${obj.gender}
+<br> ID: ${obj.ID} <br>`;
+document.getElementById('p').innerHTML = t;
+</script>
+</body>
+</html>
