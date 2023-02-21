@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car details</title>
+<style>
+div{
+border: 1px solid brown;
+border-radius: 10px;
+background-color: #320202;
+color: white;
+}
+h1{
+text-align: start;
+color: white;
+}
+table, th, td {
+align-content: center;
+border: 1px solid brown;
+border-collapse: collapse;
+color: ghostwhite;
+}
+th, td {
+align-content: center;
+padding: 5px;
+text-align: left;
+font: bold;
+color: white;
+}
+img{
+place-items: center;
+border: 1px solid brown;
+border-radius: 10px;
+}
+table#t01 {
+width: 100%;
+background-color: #f1f1c1;
+}
+body{
+background-color: #0a0a0a;
+}
+</style>
+</head>
+<body>
+<h1><b><i>CAR DETAILS</i></b></h1>
+<div>
+<h2>TOYOTA Innova</h2>
+<img src="https://imgs.search.brave.com/WuaNys7jxSRfC54QV_UbMHStri5dMAkV8_DkvyWSpsw/rs:fit:851:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5x/cmlmb3E4Z2VMYzJj/cHB4R3pFZk13SGFF/SSZwaWQ9QXBp"
+alt="Toyota Innova" height="250px">
+<div id="toyota">
+<br>
+<input type="button" value="Toyota Details"
+onmouseover="toyocar.displayToyotaDetails()">
+<br>
+</div>
+</div>
+<br>
+<div>
+<h2>MARUTI SWIFT</h2>
+<img src="https://imgs.search.brave.com/pfn6jtR_Qxn14XVJh2G-z2n4VCdWUMYqnIsyaTV9Zqc/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC56/d2czRHdkOFlDa1VV/b1B3dHJydGh3SGFF/SyZwaWQ9QXBp"
+alt="Maruti Swift" height="250px"> <div id="maruti">
+<br>
+<input type="button" value="Maruti Details"
+onmouseover="maruticar.displayMarutiDetails()">
+<br>
+</div>
+</div>
+<br>
+<div>
+<h2>MERCEDES BENZ</h2>
+<img src="https://imgs.search.brave.com/C0oaJIP7ii2myB6nYGAFcTQu_f2Pvvq7L8EUuHW8j1M/rs:fit:905:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4w/R2U5dndGXzJkRC1P/RmNhd2JjTXN3SGFE/NCZwaWQ9QXBp"
+alt="MERCEDES BENZ" height="250px"> <div id="mercedes">
+<br>
+<input type="button" value="Mercedes Details"
+onmouseover="mercedescar.displayMerceDetails()">
+<br>
+</div>
+</div>
+<script src="car details.js"></script>
+</body>
+</html>
