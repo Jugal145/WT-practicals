@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=, initial-scale=1.0">
+</head>
+<style>
+    h2 {
+  text-align: center;
+}
+</style>
+<body>
+    
+<h2>Move Image </h2>
+<img src="https://imgs.search.brave.com/F-V2lZatmv8KsxTQox1lrqtS3SWT6NyUEAPBUPssf9I/rs:fit:600:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5E/ems5UWk4dEc1UU1X/ZzNvZXB1elVRSGFG/MiZwaWQ9QXBp" id="img" style="position:absolute; left:0px; top:0px;"/>
+<script src="move.js"></script>
+</body>
+</html>
+
+
+
+
+
+//JS FILE
+function moveImage(e) {
+    var img = document.getElementById("img"); if(e.keyCode==37) {
+    cs37();
+    }
+    else if(e.keyCode==38) {
+        cs38();
