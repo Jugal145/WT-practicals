@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Data Display</title>
+</head>
+<body>
+<h1>Random Images from Multiple APIs</h1>
+<div>
+<h2>Cats</h2>
+<div id="cat-images"></div>
+</div>
+<div>
+<h2>Dogs</h2>
+<div id="dog-images"></div>
+</div>
+<div>
+<h2>Space Images</h2>
+<div id="space-images"></div>
+</div>
+<script>// API URLs
+const CAT_API_URL = 'https://api.thecatapi.com/v1/images/search';
+const DOG_API_URL = 'https://dog.ceo/api/breeds/image/random';
+const SPACE_API_URL = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+// DOM elements
+const catImagesElement = document.getElementById('cat-images');
+const dogImagesElement = document.getElementById('dog-images');
+const spaceImagesElement = document.getElementById('space-images');
+// Fetch functions
+async function fetchCatImages() {
+try {
+const response = await fetch(CAT_API_URL);
+const data = await response.json();
+return data[0].url;
+} catch (error) {
+console.error(error);
+}
+}
+async function fetchDogImages() {
+try {
+ const response = await fetch(DOG_API_URL);
+ const data = await response.json();
+ return data.message;
+ } catch (error) {
+ console.error(error);
+ }
+ }
+async function fetchSpaceImages() {
+ try {
+ const response = await fetch(SPACE_API_URL);
+const data = await response.json();
+ return data.url;
+ } catch (error) {
+ console.error(error);
+ }
+ }
+// Display functions
+async function displayCatImages() {
+const catImageUrl = await fetchCatImages();
+const imgElement = document.createElement('img');
+ imgElement.src = catImageUrl;
+catImagesElement.appendChild(imgElement);
+}
+async function displayDogImages() {
+const dogImageUrl = await fetchDogImages();
+const imgElement = document.createElement('img');
+imgElement.src = dogImageUrl;
+dogImagesElement.appendChild(imgElement);
+}
+async function displaySpaceImages() {
+const spaceImageUrl = await fetchSpaceImages();
+const imgElement = document.createElement('img');
+imgElement.src = spaceImageUrl;
+spaceImagesElement.appendChild(imgElement);
+ }
+// Display images
+displayCatImages();
+displayDogImages();
+displaySpaceImages();
+</script>
+</body>
+</html>
