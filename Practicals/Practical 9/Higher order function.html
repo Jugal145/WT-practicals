@@ -1,0 +1,124 @@
+//forEach()
+<!DOCTYPE html>
+<html>
+<body>
+<p>Click the button to loop through the array and display each element:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+const arr = ["Red", "blue", "Orange"];
+function myFunction() {
+ let text = "";
+ arr.forEach((fruit) => {
+ text += fruit + "<br>";
+ });
+document.getElementById("demo").innerHTML = text;
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+//map(),find(),filter()
+<!DOCTYPE html>
+<html>
+<body>
+<p>Click the button to create a new array by doubling each element in the original array:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+const arr = [1, 4, 3];
+function myFunction() {
+const newArr = arr.map((num) => {
+return num * 2;
+});
+document.getElementById("demo").innerHTML = newArr;
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+//Find()
+<DOCTYPE html>
+<html>
+<body>
+<p>Click the button to find the first number in the array that is greater than 3:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+const arr = [2, 4, 3, 1, 0];
+function myFunction() {
+const foundNum = arr.find((num) => {
+return num > 3;
+});
+document.getElementById("demo").innerHTML = foundNum;
+}
+</script>
+</body>
+</html>
+  
+  
+ 
+  
+  
+ //reduce()
+<!DOCTYPE html>
+<html>
+<body>
+<p>Click the button to find the sum of all numbers in the array:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+const arr = [2, 4, 6, 8, 10];
+function myFunction() {
+const sum = arr.reduce((total, num) => {
+return total + num;
+});
+document.getElementById("demo").innerHTML = sum;
+}
+</script>
+</body>
+</html>
+  
+  
+  
+  
+//call(), apply(), bind()
+  <!DOCTYPE html>
+<html>
+<body>
+<p>Click the buttons to see the differences between call(), apply(), and bind():</p>
+<button onclick="callExample()">call()</button>
+<button onclick="applyExample()">apply()</button>
+<button onclick="bindExample()">bind()</button>
+<p id="demo"></p>
+<script>
+const person = {
+firstName: "Jugal",
+lastName: "Mehta"
+};
+function fullName() {
+return this.firstName + " " + this.lastName;
+}
+function callExample() {
+const result = fullName.call(person);
+document.getElementById("demo").innerHTML = result;
+}
+function applyExample() {
+const result = fullName.apply(person);
+document.getElementById("demo").innerHTML = result;
+}
+function bindExample() {
+const result = fullName.bind(person);
+document.getElementById("demo").innerHTML = result();
+}
+</script>
+</body>
+</html>
